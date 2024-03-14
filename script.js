@@ -30,6 +30,9 @@ function addBookToLibrary() {
 myLibrary.push(book1);
 myLibrary.push(book2);
 myLibrary.push(book3);
+myLibrary.push(book3);
+myLibrary.push(book1);
+myLibrary.push(book2);
 
 function displayBooks(myLibrary) {
   const booksContainer = document.querySelector(".main");
