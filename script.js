@@ -14,6 +14,14 @@ console.log(book1.name);
 const book2 = new Book("Harry Potter", "Tedious", "300", "not read");
 console.log(book2.name);
 
+const book3 = new Book(
+  "Poor Dad Rich Dad",
+  "Rodrigo Pessoa",
+  "300",
+  "not read"
+);
+console.log(book2.name);
+
 function addBookToLibrary() {
   let userInput = [];
   myLibrary.push(userInput);
@@ -21,16 +29,7 @@ function addBookToLibrary() {
 
 myLibrary.push(book1);
 myLibrary.push(book2);
-myLibrary.push(book2);
-myLibrary.push(book2);
-myLibrary.push(book2);
-myLibrary.push(book2);
-myLibrary.push(book2);
-myLibrary.push(book2);
-myLibrary.push(book2);
-myLibrary.push(book2);
-myLibrary.push(book2);
-myLibrary.push(book2);
+myLibrary.push(book3);
 
 function displayBooks(myLibrary) {
   const booksContainer = document.querySelector(".main");

@@ -4,6 +4,7 @@ body {
   font-size: 62.5%;
   margin: 0;
   padding: 0;
+  background: #f5f5f4;
 }
 
 @font-face {
@@ -75,7 +76,7 @@ body {
   font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans";
   font-size: 1.4em;
   height: 200px;
-  width: 150px;
+  width: 170px;
   background: #76abae;
   color: #eeeeee;
   display: flex;
@@ -84,4 +85,5 @@ body {
   align-items: center;
   border: 1px solid black;
   border-radius: 5%;
+  text-align: center;
 }
