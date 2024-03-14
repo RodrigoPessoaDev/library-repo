@@ -18,11 +18,46 @@
     <div class="header">
       <div><h2>Library.</h2></div>
       <div>
-        <button class="btn">
+        <button class="btn btn_newBook">
           <i class="fa-solid fa-plus"></i>&nbspNew Book
         </button>
       </div>
     </div>
     <div class="main"></div>
+    <div class="form_container">
+      <dialog>
+        <form class="form_div" method="dialog" action="get">
+          <label for="title">Title:</label>
+          <input type="text" name="title" id="book_title" required />
+          <br />
+          <label for="author">Author:</label>
+          <input type="text" name="author" id="book_author" required />
+          <br />
+          <label for="pages">Pages:</label>
+          <input
+            type="number"
+            name="pages"
+            id="book_pages"
+            min="1"
+            max="1000"
+            required
+          />
+          <br />
+          <label for="read">Have you read it?</label>
+          <br />
+          <div class="checkbox_yes">
+            <input type="checkbox" name="read" id="book_read" />
+            <label for="bookRead">Yes</label>
+          </div>
+          <div class="form_btn">
+            <button class="add_button" formmethod="dialog" type="submit">
+              Add
+            </button>
+            <button type="reset">Clear</button>
+            <button type="button">Remove</button>
+          </div>
+        </form>
+      </dialog>
+    </div>
   </body>
 </html>
