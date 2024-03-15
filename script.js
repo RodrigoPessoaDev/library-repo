@@ -28,11 +28,8 @@ function addBookToLibrary() {
 }
 
 myLibrary.push(book1);
-myLibrary.push(book2);
-myLibrary.push(book3);
-myLibrary.push(book3);
 myLibrary.push(book1);
-myLibrary.push(book2);
+myLibrary.push(book1);
 
 function displayBooks(myLibrary) {
   const booksContainer = document.querySelector(".main");
@@ -42,8 +39,8 @@ function displayBooks(myLibrary) {
     bookElement.className = "card";
     bookElement.innerHTML = `
     <h2>${book.name}</h2>
-    <p><strong>Author:</strong>${book.author}</p>
-    <p><strong>Pages:</strong>${book.pages}</p>
+    <p><strong>Author: </strong>${book.author}</p>
+    <p><strong>Pages: </strong>${book.pages}</p>
     <p>${book.read}</p>
     `;
 
