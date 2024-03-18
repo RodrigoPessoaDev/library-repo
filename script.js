@@ -31,6 +31,7 @@ function addBookToLibrary() {
   myLibrary.push(bookAdd);
 
   const booksContainer = document.querySelector(".main");
+  const readCheck = document.querySelector(".readNotRead");
 
   if (myLibrary.length > 0) {
     const bookElement = document.createElement("div");
@@ -38,8 +39,10 @@ function addBookToLibrary() {
     bookElement.innerHTML = `<h2>${myLibrary[myLibrary.length - 1].name}</h2>
     <p><strong>Author: </strong>${myLibrary[myLibrary.length - 1].author}</p>
     <p><strong>Pages: </strong>${myLibrary[myLibrary.length - 1].pages}</p>
-    <p class='readNotRead'>${myLibrary[myLibrary.length - 1].read}</p>
-    <button id='removeBtn'>Remove</button>`;
+    <button class='readNotRead'><strong>${
+      myLibrary[myLibrary.length - 1].read
+    }</strong></button>
+    <button id='removeBtn'><strong>Remove</strong></button>`;
 
     booksContainer.appendChild(bookElement);
   }
@@ -54,4 +57,8 @@ showButton.addEventListener("click", () => {
 closeButton.addEventListener("click", () => {
   addBookToLibrary();
   dialog.close();
+});
+
+readCheck.addEventListener("click", () => {
+  console.log("CLicked");
 });
