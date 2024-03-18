@@ -74,6 +74,7 @@ body {
   grid-auto-flow: row;
 }
 
+/* Cards */
 .card {
   font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans";
   font-size: 1.4em;
@@ -88,6 +89,18 @@ body {
   border: 1px solid black;
   border-radius: 5%;
   text-align: center;
+}
+
+.readNotRead {
+  background: #4ade80;
+}
+
+.readNotRead,
+#removeBtn {
+  border: 1px;
+  width: 60%;
+  padding: 10px 25px 10px 25px;
+  border-radius: 10px;
 }
 
 /* Form */

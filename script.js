@@ -38,7 +38,8 @@ function addBookToLibrary() {
     bookElement.innerHTML = `<h2>${myLibrary[myLibrary.length - 1].name}</h2>
     <p><strong>Author: </strong>${myLibrary[myLibrary.length - 1].author}</p>
     <p><strong>Pages: </strong>${myLibrary[myLibrary.length - 1].pages}</p>
-    <p>${myLibrary[myLibrary.length - 1].read}</p>`;
+    <p class='readNotRead'>${myLibrary[myLibrary.length - 1].read}</p>
+    <button id='removeBtn'>Remove</button>`;
 
     booksContainer.appendChild(bookElement);
   }
