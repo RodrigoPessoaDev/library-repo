@@ -94,22 +94,31 @@ body {
   box-shadow: 7px 4px 12px -1px rgba(66, 68, 90, 1);
 }
 
-.readNotRead {
-  background: #4ade80;
-}
-
 .readNotRead,
-#removeBtn {
+.removeBtn {
   border: 1px;
   height: 35px;
-  width: 240;
-  padding: 10px 25px 10px 25px;
+  width: 90%;
   border-radius: 10px;
+  padding: 0;
+  cursor: pointer;
 }
 
-#removeBtn {
+.readNotRead {
+  background-color: #4ade80;
+}
+
+.removeBtn {
   background: #d4d4d4;
   margin-bottom: 10px;
+}
+
+.readNotRead:hover {
+  background-color: #16a34a;
+}
+
+.removeBtn:hover {
+  background-color: #a3a3a3;
 }
 
 /* Form */
