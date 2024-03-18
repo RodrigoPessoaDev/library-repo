@@ -32,18 +32,6 @@ function addBookToLibrary() {
 
   const booksContainer = document.querySelector(".main");
 
-  // myLibrary.forEach((book) => {
-  //   const bookElement = document.createElement("div");
-  //   bookElement.className = "card";
-  //   bookElement.innerHTML = `
-  //   <h2>${book.name}</h2>
-  //   <p><strong>Author: </strong>${book.author}</p>
-  //   <p><strong>Pages: </strong>${book.pages}</p>
-  //   <p>${book.read}</p>
-  //   `;
-
-  //   booksContainer.appendChild(bookElement);
-  // });
   if (myLibrary.length > 0) {
     const bookElement = document.createElement("div");
     bookElement.className = "card";
