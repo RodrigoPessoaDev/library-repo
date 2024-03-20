@@ -19,13 +19,9 @@ function addBookToLibrary() {
   let bookTitle = document.getElementById("book_title").value;
   let bookAuthor = document.getElementById("book_author").value;
   let bookPages = document.getElementById("book_pages").value;
-  let bookRead = document.getElementById("book_read");
-
-  if (!bookRead.checked === true) {
-    bookRead = "Not Read";
-  } else {
-    bookRead = document.getElementById("book_read").value;
-  }
+  let bookRead = document.getElementById("book_read").checked
+    ? "Read"
+    : "Not Read";
 
   let bookAdd = new Book(bookTitle, bookAuthor, bookPages, bookRead);
   myLibrary.push(bookAdd);
@@ -35,20 +31,16 @@ function addBookToLibrary() {
   if (myLibrary.length > 0) {
     const bookElement = document.createElement("div");
     bookElement.className = "card";
-    bookElement.innerHTML = `<h2>${myLibrary[myLibrary.length - 1].name}</h2>
-    <p><strong>Author: </strong>${myLibrary[myLibrary.length - 1].author}</p>
-    <p><strong>Pages: </strong>${myLibrary[myLibrary.length - 1].pages}</p>
-     
+    bookElement.innerHTML = `<h2>${bookTitle}</h2>
+    <p><strong>Author: </strong>${bookAuthor}</p>
+    <p><strong>Pages: </strong>${bookPages}</p>
     <button class="removeBtn"><strong>Remove</strong></button>`;
 
     booksContainer.appendChild(bookElement);
 
     if (myLibrary.length > 0) {
       const bookElementBtn = document.createElement("button");
-      bookElementBtn.innerHTML = `<strong>${
-        myLibrary[myLibrary.length - 1].read
-      }</strong>`;
-
+      bookElementBtn.innerHTML = `<strong>${bookRead}</strong>`;
       bookElement.appendChild(bookElementBtn);
 
       switch (bookRead) {
@@ -59,7 +51,23 @@ function addBookToLibrary() {
           bookElementBtn.className = "buttonRed readNotRead";
           break;
       }
+
+      bookElementBtn.addEventListener("click", () => {
+        changeReadStatus(bookElementBtn);
+      });
     }
+  }
+}
+
+function changeReadStatus(btn) {
+  if (btn.classList.contains("buttonRed")) {
+    btn.classList.toggle("buttonRed");
+    btn.classList.add("buttonGreen");
+    btn.innerHTML = "<strong>Read</strong>";
+  } else {
+    btn.classList.toggle("buttonGreen");
+    btn.classList.add("buttonRed");
+    btn.innerHTML = "<strong>Not Read</strong>";
   }
 }
 
@@ -73,9 +81,3 @@ closeButton.addEventListener("click", () => {
   addBookToLibrary();
   dialog.close();
 });
-
-{
-  /* <button class="readNotRead">
-  <strong>${myLibrary[myLibrary.length - 1].read}</strong>
-</button>; */
-}
