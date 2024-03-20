@@ -38,12 +38,28 @@ function addBookToLibrary() {
     bookElement.innerHTML = `<h2>${myLibrary[myLibrary.length - 1].name}</h2>
     <p><strong>Author: </strong>${myLibrary[myLibrary.length - 1].author}</p>
     <p><strong>Pages: </strong>${myLibrary[myLibrary.length - 1].pages}</p>
-    <button class='readNotRead'><strong>${
-      myLibrary[myLibrary.length - 1].read
-    }</strong></button>
-    <button class='removeBtn'><strong>Remove</strong></button>`;
+     
+    <button class="removeBtn"><strong>Remove</strong></button>`;
 
     booksContainer.appendChild(bookElement);
+
+    if (myLibrary.length > 0) {
+      const bookElementBtn = document.createElement("button");
+      bookElementBtn.innerHTML = `<strong>${
+        myLibrary[myLibrary.length - 1].read
+      }</strong>`;
+
+      bookElement.appendChild(bookElementBtn);
+
+      switch (bookRead) {
+        case "Read":
+          bookElementBtn.className = "buttonGreen readNotRead";
+          break;
+        case "Not Read":
+          bookElementBtn.className = "buttonRed readNotRead";
+          break;
+      }
+    }
   }
 }
 
@@ -57,3 +73,9 @@ closeButton.addEventListener("click", () => {
   addBookToLibrary();
   dialog.close();
 });
+
+{
+  /* <button class="readNotRead">
+  <strong>${myLibrary[myLibrary.length - 1].read}</strong>
+</button>; */
+}
