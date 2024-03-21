@@ -33,11 +33,23 @@ function addBookToLibrary() {
     bookElement.className = "card";
     bookElement.innerHTML = `<h2>${bookTitle}</h2>
     <p><strong>Author: </strong>${bookAuthor}</p>
-    <p><strong>Pages: </strong>${bookPages}</p>
-    <button class="removeBtn"><strong>Remove</strong></button>`;
+    <p><strong>Pages: </strong>${bookPages}</p>`;
 
     booksContainer.appendChild(bookElement);
 
+    // Removing object from library
+    if (myLibrary.length > 0) {
+      const removeBook = document.createElement("button");
+      removeBook.innerHTML = `<strong>Remove</strong>`;
+      removeBook.className = "removeBtn";
+      bookElement.appendChild(removeBook);
+
+      removeBook.addEventListener("click", () => {
+        removeThis(bookElement);
+      });
+    }
+
+    // Change classes depending on read or not
     if (myLibrary.length > 0) {
       const bookElementBtn = document.createElement("button");
       bookElementBtn.innerHTML = `<strong>${bookRead}</strong>`;
@@ -69,6 +81,11 @@ function changeReadStatus(btn) {
     btn.classList.add("buttonRed");
     btn.innerHTML = "<strong>Not Read</strong>";
   }
+}
+
+function removeThis(button) {
+  const bookIndex = myLibrary.indexOf(button.parent);
+  myLibrary = myLibrary.splice(bookIndex, 1);
 }
 
 // Show dialog
