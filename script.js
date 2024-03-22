@@ -1,5 +1,7 @@
 const myLibrary = [];
 
+const logo = document.getElementById("logo_head");
+
 // Form dialog
 
 const dialog = document.querySelector("dialog");
@@ -37,17 +39,18 @@ function addBookToLibrary() {
 
     booksContainer.appendChild(bookElement);
 
-    // Removing object from library
-    if (myLibrary.length > 0) {
-      const removeBook = document.createElement("button");
-      removeBook.innerHTML = `<strong>Remove</strong>`;
-      removeBook.className = "removeBtn";
-      bookElement.appendChild(removeBook);
+    // Create remove button
+    const removeButton = document.createElement("button");
+    removeButton.innerHTML = "<strong>Remove</strong>";
+    removeButton.className = "removeBtn";
+    bookElement.appendChild(removeButton);
 
-      removeBook.addEventListener("click", () => {
-        removeThis(bookElement);
-      });
-    }
+    // Attach event listener to remove button
+    removeButton.addEventListener("click", () => {
+      removeBook(bookAdd, bookElement);
+    });
+
+    booksContainer.appendChild(bookElement);
 
     // Change classes depending on read or not
     if (myLibrary.length > 0) {
@@ -83,9 +86,12 @@ function changeReadStatus(btn) {
   }
 }
 
-function removeThis(button) {
-  const bookIndex = myLibrary.indexOf(button.parent);
-  myLibrary = myLibrary.splice(bookIndex, 1);
+function removeBook(book, bookElement) {
+  const index = myLibrary.indexOf(book);
+  if (index !== -1) {
+    myLibrary.splice(index, 1);
+    bookElement.remove();
+  }
 }
 
 // Show dialog
@@ -96,5 +102,10 @@ showButton.addEventListener("click", () => {
 // Close form button & Add book button
 closeButton.addEventListener("click", () => {
   addBookToLibrary();
+  document.querySelector("form").reset();
   dialog.close();
+});
+
+logo.addEventListener("click", () => {
+  location.reload();
 });
