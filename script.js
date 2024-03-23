@@ -37,8 +37,10 @@ function addBookToLibrary() {
       const bookElement = document.createElement("div");
       bookElement.className = "card";
       bookElement.innerHTML = `<h2>${bookTitle}</h2>
-    <p><strong>Author: </strong>${bookAuthor}</p>
-    <p><strong>Pages: </strong>${bookPages}</p>`;
+    <div>
+      <p><strong>Author: </strong>${bookAuthor}</p>
+      <p><strong>Pages: </strong>${bookPages}</p>
+    </div>`;
 
       booksContainer.appendChild(bookElement);
 
