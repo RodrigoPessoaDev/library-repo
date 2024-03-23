@@ -19,37 +19,37 @@ body {
 /* Header */
 
 .header {
+  align-items: center;
+  background: #222831;
+  border: 1px solid black;
+  color: #eeeeee;
+  display: flex;
   font-family: myFont, Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
     "Helvetica Neue", sans-serif;
-  height: 120px;
-  width: auto;
-  color: #eeeeee;
-  font-weight: 800;
-  background: #222831;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   font-size: 1.8em;
+  font-weight: 800;
+  height: 120px;
+  justify-content: space-between;
   padding: 0px 20px 0px 20px;
-  border: 1px solid black;
+  width: auto;
 }
 
 .btn {
-  font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans";
-  font-weight: 0;
-  font-size: 15px;
-  color: #fff;
+  align-items: center;
   background-color: #138515;
-  padding: 10px 30px;
+  border-radius: 50px;
   border: solid #22c55e 1px;
   box-shadow: rgb(0, 0, 0) 7px 6px 16px -4px;
-  border-radius: 50px;
-  transition: 1000ms;
-  transform: translateY(0);
+  color: #fff;
+  cursor: pointer;
   display: flex;
   flex-direction: row;
-  align-items: center;
-  cursor: pointer;
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans";
+  font-size: 15px;
+  font-weight: 0;
+  padding: 10px 30px;
+  transform: translateY(0);
+  transition: 1000ms;
 }
 
 #logo_head {
@@ -57,62 +57,55 @@ body {
 }
 
 .btn:hover {
-  transition: 1000ms;
+  background-color: #fff;
+  border: solid 1px #000000;
+  color: #000000;
   padding: 10px 50px;
   transform: translateY(-0px);
-  background-color: #fff;
-  color: #000000;
-  border: solid 1px #000000;
+  transition: 1000ms;
 }
 
 /* Main  */
 
 .main {
-  margin: 2% 5% 2% 5%;
-  /* display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: auto;
-  row-gap: 50px;
+  align-items: center;
   column-gap: 20px;
-  justify-items: center;
-  grid-auto-flow: row; */
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-  align-items: center;
+  margin: 2% 5% 2% 5%;
   row-gap: 50px;
-  column-gap: 20px;
 }
 
 /* Cards */
 .card {
-  font-family: Verdana, Oxygen, Ubuntu, Cantarell, "Open Sans";
-  font-size: 1.4em;
-  height: 300px;
-  width: 250px;
+  -moz-box-shadow: 7px 4px 12px -1px rgba(66, 68, 90, 1);
+  -webkit-box-shadow: 7px 4px 12px -1px rgba(66, 68, 90, 1);
+  align-items: center;
   background: #e4e4e7;
+  border-radius: 5%;
+  border: 1px;
+  box-shadow: 7px 4px 12px -1px rgba(66, 68, 90, 1);
   color: #1e293b;
   display: flex;
   flex-direction: column;
+  font-family: Verdana, Oxygen, Ubuntu, Cantarell, "Open Sans";
+  font-size: 1.4em;
+  height: 300px;
   justify-content: space-between;
-  align-items: center;
-  border: 1px;
-  border-radius: 5%;
   text-align: center;
-  -webkit-box-shadow: 7px 4px 12px -1px rgba(66, 68, 90, 1);
-  -moz-box-shadow: 7px 4px 12px -1px rgba(66, 68, 90, 1);
-  box-shadow: 7px 4px 12px -1px rgba(66, 68, 90, 1);
+  width: 250px;
 }
 
 .readNotRead,
 .removeBtn {
-  border: 1px;
-  height: 35px;
-  width: 90%;
   border-radius: 10px;
-  padding: 0;
+  border: 1px;
   cursor: pointer;
+  height: 35px;
+  padding: 0;
+  width: 90%;
 }
 
 .buttonGreen {
@@ -144,27 +137,27 @@ body {
 /* Form */
 
 .form_container {
-  height: 100vh;
-  width: auto;
-  display: flex;
-  justify-content: center;
   align-items: start;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  width: auto;
 }
 
 .form_div {
-  padding: 50px;
-  font-size: 1.4em;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   display: flex;
   flex-direction: column;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 1.4em;
+  padding: 50px;
 }
 
 .form_btn {
-  margin-top: 40px;
+  align-items: flex-end;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  margin-top: 40px;
 }
 
 ::backdrop {

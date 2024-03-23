@@ -25,51 +25,55 @@ function addBookToLibrary() {
     ? "Read"
     : "Not Read";
 
-  let bookAdd = new Book(bookTitle, bookAuthor, bookPages, bookRead);
-  myLibrary.push(bookAdd);
+  if (bookTitle === "" || bookAuthor === "" || bookPages === "") {
+    alert("Fill the required fields");
+  } else {
+    let bookAdd = new Book(bookTitle, bookAuthor, bookPages, bookRead);
+    myLibrary.push(bookAdd);
 
-  const booksContainer = document.querySelector(".main");
+    const booksContainer = document.querySelector(".main");
 
-  if (myLibrary.length > 0) {
-    const bookElement = document.createElement("div");
-    bookElement.className = "card";
-    bookElement.innerHTML = `<h2>${bookTitle}</h2>
+    if (myLibrary.length > 0) {
+      const bookElement = document.createElement("div");
+      bookElement.className = "card";
+      bookElement.innerHTML = `<h2>${bookTitle}</h2>
     <p><strong>Author: </strong>${bookAuthor}</p>
     <p><strong>Pages: </strong>${bookPages}</p>`;
 
-    booksContainer.appendChild(bookElement);
+      booksContainer.appendChild(bookElement);
 
-    // Create remove button
-    const removeButton = document.createElement("button");
-    removeButton.innerHTML = "<strong>Remove</strong>";
-    removeButton.className = "removeBtn";
-    bookElement.appendChild(removeButton);
+      // Create remove button
+      const removeButton = document.createElement("button");
+      removeButton.innerHTML = "<strong>Remove</strong>";
+      removeButton.className = "removeBtn";
+      bookElement.appendChild(removeButton);
 
-    // Attach event listener to remove button
-    removeButton.addEventListener("click", () => {
-      removeBook(bookAdd, bookElement);
-    });
-
-    booksContainer.appendChild(bookElement);
-
-    // Change classes depending on read or not
-    if (myLibrary.length > 0) {
-      const bookElementBtn = document.createElement("button");
-      bookElementBtn.innerHTML = `<strong>${bookRead}</strong>`;
-      bookElement.appendChild(bookElementBtn);
-
-      switch (bookRead) {
-        case "Read":
-          bookElementBtn.className = "buttonGreen readNotRead";
-          break;
-        case "Not Read":
-          bookElementBtn.className = "buttonRed readNotRead";
-          break;
-      }
-
-      bookElementBtn.addEventListener("click", () => {
-        changeReadStatus(bookElementBtn);
+      // Attach event listener to remove button
+      removeButton.addEventListener("click", () => {
+        removeBook(bookAdd, bookElement);
       });
+
+      booksContainer.appendChild(bookElement);
+
+      // Change classes depending on read or not
+      if (myLibrary.length > 0) {
+        const bookElementBtn = document.createElement("button");
+        bookElementBtn.innerHTML = `<strong>${bookRead}</strong>`;
+        bookElement.appendChild(bookElementBtn);
+
+        switch (bookRead) {
+          case "Read":
+            bookElementBtn.className = "buttonGreen readNotRead";
+            break;
+          case "Not Read":
+            bookElementBtn.className = "buttonRed readNotRead";
+            break;
+        }
+
+        bookElementBtn.addEventListener("click", () => {
+          changeReadStatus(bookElementBtn);
+        });
+      }
     }
   }
 }
