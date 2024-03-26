@@ -147,6 +147,11 @@ p {
 
 /* Form */
 
+dialog {
+  padding: 0;
+  background: #fafafa;
+}
+
 .form_container {
   align-items: start;
   display: flex;
