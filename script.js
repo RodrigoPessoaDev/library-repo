@@ -1,12 +1,14 @@
 const myLibrary = [];
 
 const logo = document.getElementById("logo_head");
+let isModalOpen = false;
 
 // Form dialog
 
 const dialog = document.querySelector("dialog");
 const showButton = document.querySelector(".btn_newBook");
 const closeButton = document.querySelector(".add_button");
+const form = document.querySelector(".form_container");
 
 // Constructor
 function Book(name, author, pages, read) {
@@ -103,6 +105,7 @@ function removeBook(book, bookElement) {
 // Show dialog
 showButton.addEventListener("click", () => {
   dialog.showModal();
+  isModalOpen = true;
 });
 
 // Close form button & Add book button
@@ -110,8 +113,16 @@ closeButton.addEventListener("click", () => {
   addBookToLibrary();
   document.querySelector("form").reset();
   dialog.close();
+  isModalOpen = false;
 });
 
 logo.addEventListener("click", () => {
   location.reload();
+});
+
+window.addEventListener("mousedown", function (event) {
+  if (event.target === dialog) {
+    dialog.close();
+    isModalOpen = false;
+  }
 });
